@@ -464,104 +464,198 @@ section a:hover {
         height: auto;
     }
 }
-/* Subscription Section */
+/* SUBSCRIPTION SECTION */
+
 .subscription-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    width: 100%;
-    padding: 3em 1em;
-    box-sizing: border-box;
-    align-items: center;
-}
-.subscribe-button {
-    width: 12em;
-    height: 5em;
-    background-color: #8B0000;
-    color: white;
-    font-size: 1.2em;
-    border: none;
-    cursor: pointer;
+    display: flex;                          /* Uses flexbox */
+    flex-direction: row;                    /* Places columns side by side */
+    flex-wrap: wrap;                        /* Allows columns to wrap */
+    align-items: center;                    /* Aligns columns vertically */
+    gap: 2em;                               /* Adds space between columns */
+    width: 100%;                            /* Uses full width */
+    padding: 3em 1em;                       /* Adds inside spacing */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Left Side - Form */
+/* LEFT SIDE - FORM */
+
 .left {
-    flex: 1 1 20em;
-    padding: 1.5em;
-    box-sizing: border-box;
+    flex: 1 1 20em;                         /* Allows form column to grow */
+    min-width: 0;                           /* Prevents overflow */
+    padding: 1.5em;                         /* Adds space around form */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Form Heading */
-h2 {
-    margin-bottom: 1em;
+/* MAILCHIMP CONTAINER */
+
+#mc_embed_signup {
+    width: 100%;                            /* Uses available width */
+    padding: 1.5em;                         /* Adds space inside container */
+    background-color: #fff;                 /* Sets white background */
+    clear: both;                            /* Clears floats */
+    font-family: Arial, Helvetica, sans-serif; /* Sets font */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Form */
-form {
-    display: flex;
-    flex-direction: column;
+/* FORM */
+
+#mc-embedded-subscribe-form {
+    display: block;                         /* Uses normal form layout */
+    width: 100%;                            /* Uses available width */
+    margin: 0;                              /* Removes default margin */
+    padding: 0;                             /* Removes default padding */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Form Labels */
-label {
-    display: block;
-    margin-bottom: 0.5em;
+/* FORM CONTENT */
+
+#mc_embed_signup_scroll {
+    width: 100%;                            /* Uses available width */
+    padding: 0;                             /* Removes extra spacing */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Form Inputs */
-input {
-    width: 100%;
-    max-width: 25em;
-    padding: 0.8em;
-    margin-bottom: 1.2em;
-    border: 0.1em solid #285b46;
-    border-radius: 0.5em;
-    box-sizing: border-box;
+/* FORM HEADING */
+
+#mc-embedded-subscribe-form h2 {
+    display: block;                         /* Makes heading a block */
+    width: 100%;                            /* Uses available width */
+    margin: 0 0 1em;                        /* Adds space below heading */
+    padding: 1em;                           /* Adds space inside heading */
+    font-size: 2em;                         /* Sets heading size */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Submit Button */
-input[type="submit"] {
-    width: 12em;
-    align-self: flex-start;
-    background-color: #285b46;
-    color: white;
-    border: none;
-    cursor: pointer;
+/* REQUIRED FIELD MESSAGE */
+
+.indicates-required {
+    margin-bottom: 1em;                     /* Adds space below message */
 }
 
-/* Button Hover */
-input[type="submit"]:hover {
-    background-color: #60BC98;
-    color: #8B0000;
+/* FORM FIELD CONTAINERS */
+
+.mc-field-group {
+    display: flex;                          /* Uses flexbox */
+    flex-direction: column;                 /* Stacks label and input */
+    width: 100%;                            /* Uses available width */
+    margin-bottom: 1em;                     /* Adds space between fields */
 }
 
-/* Right Side - Image */
+/* FORM LABELS */
+
+#mc-embedded-subscribe-form label {
+    display: block;                         /* Places label on its own line */
+    margin-bottom: 0.5em;                   /* Adds space below label */
+    font-weight: bold;                      /* Makes labels bold */
+}
+
+/* FORM INPUTS */
+
+#mc-embedded-subscribe-form input:not([type="submit"]) {
+    width: 100%;                            /* Uses available width */
+    max-width: 25em;                        /* Limits input width */
+    padding: 0.8em;                         /* Adds inside spacing */
+    margin: 0;                              /* Removes default margin */
+    border: 0.1em solid #285b46;            /* Adds green border */
+    border-radius: 0.5em;                   /* Rounds input corners */
+    box-sizing: border-box;                 /* Includes padding in width */
+}
+
+/* BIRTHDAY INPUTS */
+
+#mc-embedded-subscribe-form .datefield {
+    display: flex;                          /* Uses flexbox */
+    flex-direction: row;                    /* Places date inputs in a row */
+    flex-wrap: wrap;                         /* Allows inputs to wrap */
+    align-items: center;                    /* Aligns inputs vertically */
+    gap: 0.5em;                              /* Adds space between inputs */
+}
+
+#mc-embedded-subscribe-form .datefield input {
+    width: 5em;                             /* Sets birthday input width */
+}
+
+/* SUBMIT BUTTON CONTAINER */
+
+.submit-container {
+    margin-top: 1em;                        /* Adds space above button */
+}
+
+/* SUBMIT BUTTON */
+
+#mc-embedded-subscribe {
+    width: 12em;                            /* Sets button width */
+    padding: 1em;                           /* Adds inside spacing */
+    background-color: #285b46;              /* Sets green background */
+    color: white;                           /* Sets white text */
+    font-size: 1.2em;                       /* Sets text size */
+    border: none;                            /* Removes border */
+    border-radius: 0.5em;                   /* Rounds button corners */
+    cursor: pointer;                        /* Shows pointer on hover */
+}
+
+/* BUTTON HOVER */
+
+#mc-embedded-subscribe:hover {
+    background-color: #60BC98;              /* Changes background */
+    color: #8B0000;                          /* Changes text color */
+}
+
+/* HIDDEN ANTI-SPAM FIELD */
+
+.hidden-field {
+    position: absolute;                     /* Removes from normal layout */
+    left: -5000em;                           /* Hides field off screen */
+}
+
+/* RIGHT SIDE - IMAGE */
+
 .image-right {
-    flex: 1 1 20em;
-    box-sizing: border-box;
+    flex: 1 1 20em;                         /* Allows image column to grow */
+    min-width: 0;                           /* Prevents overflow */
+    box-sizing: border-box;                 /* Includes padding in width */
 }
 
-/* Image Styling */
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 1em;
+/* IMAGE STYLING */
+
+.image-right img {
+    display: block;                         /* Removes inline spacing */
+    width: 100%;                            /* Fills image container */
+    height: auto;                           /* Maintains proportions */
+    border-radius: 1em;                     /* Rounds image corners */
 }
 
-/* Mobile Layout */
+/* MOBILE LAYOUT */
+
 @media screen and (max-width: 40em) {
 
     .subscription-section {
-        flex-direction: column;
+        flex-direction: column;             /* Stacks form and image */
+        gap: 1em;                            /* Reduces column spacing */
+        padding: 2em 1em;                    /* Reduces section spacing */
     }
 
     .left,
     .image-right {
-        width: 100%;
+        flex: 1 1 100%;                      /* Uses full available width */
+        width: 100%;                         /* Fills container */
+        padding: 1em;                        /* Adds inside spacing */
     }
-}
 
+    #mc_embed_signup {
+        padding: 1em;                        /* Reduces container padding */
+    }
+
+    #mc-embedded-subscribe-form h2 {
+        padding: 0.8em;                      /* Keeps heading padding */
+        font-size: 1.6em;                    /* Reduces heading size */
+    }
+
+    #mc-embedded-subscribe {
+        width: 100%;                         /* Makes button full width */
+    }
+
+}
 /* SOCIAL ICONS */
 .icon-area ul {
     display: flex;
